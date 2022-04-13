@@ -1,0 +1,63 @@
+h1 {
+    font-size: 75px;
+    font-weight: bolder;
+    border-bottom: double;
+}
+  
+h2 {
+    font-size: 45px;
+}
+  
+h5 {
+    font-size: 15px;
+}
+  
+p {
+  font-size: 22px;
+  font-weight: medium;
+  color: #444444;
+}
+  
+body {
+    border-style: double;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 6%;
+    background-color: lightblue;
+    flex-direction: column;
+}
+  
+#devmountainBanner {
+    height: 100px;
+    width: 450px;
+}
+
+#signup {
+    text-align: center;
+}
+
+#scott {
+    border-style: double;
+}
+
+#extra {
+    float: right;
+    padding-left: 3%;
+    border-left: double;
+    height: 700px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 15.4px;
+    color: #555555;
+}
+
+h4 {
+    text-align: center;
+}
+
+#facebookbanner {
+    width: 30px;
+    float: right;
+}

@@ -1,0 +1,36 @@
+p {
+    font-size: 24px;
+    color: black;
+    font-weight: bolder;
+    width: 25vw;
+    border-style: dashed;
+    border-width: 5px;
+    border-color: white;
+}
+
+h4 {
+    color: tan;
+}
+
+h1 {
+    font-size: 54px;
+    color: black;
+}
+
+img{
+    height: 25vh;
+    width: 25vw;
+}
+
+body {
+    background-color: indigo;
+    padding-left: 35%;
+    padding-right: 35%;
+    border-style: double;
+    border-width: 20px;
+}
+
+a{
+    text-decoration:none;
+    color:aliceblue
+}

@@ -1,0 +1,35 @@
+Changing directory ---- cd Desktop/Devmountain (tab will auto complete!!!)
+Move up a directory ---- cd ../../..
+
+Moving a file to a new folder ---- mv fileName /file/location
+Renaming a file ---- mv oldName newName
+Make a new folder where you are in the directory ---- mkdir fileName (can make more folders w/ spaces)
+Opens the file you're in in VS Code ---- code .
+
+Seeing what files are in a folder ---- ls
+Seeing what directory path you're in ---- pwd
+Getting the status of a file ---- git status
+Shows what GitHub repositories you can push/fetch ---- git remote -v
+Shows changes made to repository ---- git log
+Shows the contents of a file ---- cat fileName
+Kills whatever is running in command line ---- ctrl+c
+Creating a file in the repo you're currently in ---- touch fileName
+
+Pushing to GitHub
+_______________________________
+Create a local repository in the folder you're currently in ---- git init
+Defining the file being changed ---- git add . (or file name instead of .)
+Committing changes made w/ a comment ---- git commit -m "updates"
+Connecting GitHub repository to file ---- git remote add origin (url)
+Pushing changes for first time ---- git push origin master
+Pushing changes for updates ---- git push
+
+Getting "fatal: The current branch has no upstream branch." ---- git config --global push.default current
+Getting "The tip of your current branch is behind its remote counterpart" (forces the push) ---- git push -f master
+
+
+
+Pulling from GitHub
+_______________________________
+Cloning file (repository) from GitHub ---- git clone (github url)
+Pull changes from a GitHub repository that you are already tapped into ---- git pull

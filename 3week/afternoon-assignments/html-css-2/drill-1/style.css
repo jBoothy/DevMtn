@@ -1,0 +1,23 @@
+*{
+    margin:0px;
+    padding:0;
+    background-color: lightgray;
+}
+
+header{
+    width: 100%;
+    height: 175px;
+    background-color: dimgray;
+}
+article{
+    background-color:rgb(236, 236, 236);
+    margin:auto;
+    width:70%;
+    height: 700px;
+}
+footer{
+    background-color: black;
+    height:100px;
+    width: 70%;
+    margin:auto;
+}
