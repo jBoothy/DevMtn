@@ -13,7 +13,7 @@ const login = body => axios.post(`${baseURL}/login`, body).then( res => {
 const register = body => axios.post(`${baseURL}/register`, body).then(res => {
   createUserCard(res.data)
 }).catch(err => {
-  console.log(err)
+  console.log(err.body)
   alert('Uh oh. Your request did not work.')
 })
 
@@ -48,6 +48,11 @@ function registerSubmitHandler(e) {
     alert("Your passwords need to match.")
     return
   }
+  if (username.value ===``||email.value===``){
+    console.log(`broke`)
+    alert(`missing required data`)
+    return
+  }
 
   let bodyObj = {
       username: username.value,
@@ -71,7 +76,6 @@ function createUserCard(data) {
     userContainer.innerHTML = ''
     const userCard = document.createElement('div')
     userCard.classList.add('user-card')
-
     userCard.innerHTML = `<p class="username">Username: ${data.username}</p>
     <p class="email">Email: ${data.email}</p>
     <p class="first-name">First Name: ${data.firstName}</p>
