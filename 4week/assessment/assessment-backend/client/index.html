@@ -3,11 +3,43 @@
   <head>
     <title>Back End Assessment</title>
   </head>
+  <header>
+    <h1>Fortune Generator</h1>
+  </header>
   <body class="container">
-    <button id="complimentButton">Get a compliment</button>
-
+    <button id="complimentButton">Get a compliment, you deserve it</button>
+    <main>
+    
+    <form id=fortuneSubmit>
+      <h2>Enter a fortune here to added to our database</h2>
+      <input id="fortuneText" type = "text" placeholder="Enter a fortune to be added">
+      <input type="submit" value = "Submit">
+      <br><br>
+      <button id = 'randFortune'>Get a random fortune<br>from your submissions</button>
+      <h3 id="message"></h3>
+    </form>
+    <section id='fortunedisplay'></section>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
+      const fortunedisplay = document.getElementById(`fortunedisplay`)
+      const createFortune = (fortune) =>{
+        console.log(fortune)
+        const fortuneCard = document.createElement('div')
+        fortuneCard.classList.add('fortune-card')
+
+        fortuneCard.innerHTML = `
+          <h2 class="fortune">${fortune.text}</h2>
+          <div class="btns-container">
+            <button onclick="updatefortune(${fortune.id}, 'minus')">-</button>
+            <p class="movie-rating">${fortune.rating} stars</p>
+            <button onclick="updatefortune(${fortune.id}, 'plus')">+</button>
+          </div>
+          <button onclick="deleteFortune(${fortune.id})">delete</button>`
+
+
+    fortunedisplay.appendChild(fortuneCard)
+}
+
       document.getElementById("complimentButton").onclick = function () {
         axios.get("http://localhost:4000/api/compliment/")
             .then(function (response) {
@@ -15,6 +47,63 @@
               alert(data);
             });
       };
+      document.getElementById(`fortuneSubmit`).onsubmit = (e) =>{
+        e.preventDefault()
+        let fortune = document.getElementById(`fortuneText`).value
+        if(fortune === ``){
+          document.getElementById(`message`).innertext=``
+          document.getElementById(`message`).innerText= `Fortune must have text`
+          return
+        }
+        axios.post(`http://localhost:4000/api/fortune`, {fortune})
+        .then((res)=>{
+          document.getElementById(`message`).innertext=``
+          document.getElementById(`message`).innerText= `Successfully added!`
+        }).catch(err=>console.log(err))
+      }
+      document.getElementById(`randFortune`).onclick = (e) =>{
+        e.preventDefault()
+        fortunedisplay.innerHTML = ``
+        axios.get(`http://localhost:4000/api/fortune`)
+        .then(res =>{
+          const fortune = res.data
+          createFortune(fortune)
+        }).catch(err=>console.log(err))
+        document.getElementById(`message`).innerText=`There are no fortunes currently added`
+      }
+      const deleteFortune=(id)=>{
+        axios.delete(`http://localhost:4000/api/fortune/${id}`)
+        .then((res)=>{
+          document.getElementById(`message`).innerText=``
+          document.getElementById(`message`).innerText= `Successfully deleted fortune`
+          document.querySelector(`.fortune-card`).remove()
+        })
+      }
+      const updatefortune= (id, type) => axios.put(`http://localhost:4000/api/fortune/${id}`, {type})
+      .then((res)=>{
+        console.log(res.data)
+        let {rating} = res.data
+        if (!!rating){
+          if (rating===10){
+            document.getElementById(`message`).innerText=``
+            document.getElementById(`message`).innerText=`Max Rating is ten`
+            document.getElementById(`fortunedisplay`).innerText=``
+            createFortune(res.data)
+          return
+        }
+        document.getElementById(`message`).innerText=``
+        document.getElementById(`message`).innerText=`Rating Updated`
+        document.getElementById(`fortunedisplay`).innerText=``
+        createFortune(res.data)
+        }
+        else if(!rating){
+          document.getElementById(`message`).innerText=``
+          document.getElementById(`message`).innerText= res.data
+          document.getElementById(`fortunedisplay`).innerText=``
+        }
+      })
+
     </script>
-  </body>
+</main>
+</body>
 </html>
