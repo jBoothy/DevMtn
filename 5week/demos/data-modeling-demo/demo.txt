@@ -1,0 +1,117 @@
+Data Modeling Demo 8/19/2022
+Brainstorming:
+Users:
+user_id
+user_password
+user_email
+first_name
+last_name
+user_bio
+Groups:
+group_id
+group_name
+group_members
+posts
+Posts:
+post_id
+photo
+post_content
+user_who_posted
+Comments:
+comment_id
+user_commented
+Post_commented_on
+Who following who:
+Posts for certain groups:
+Tables:
+Users Table:
+user_id
+user_password
+user_email
+first_name
+last_name
+user_bio
+Groups Table:
+group_id
+group_name
+Posts Table:
+post_id
+post_content
+post_image
+author_id
+Comments Table:
+comment_id
+comment_text
+author_id
+post_id
+Follow Table:
+follow_id
+follower_id
+Following_id
+Group Posts Table:
+group_post_id
+group_id
+post_id
+Group Users Table:
+group_user_id
+group_id
+user_id
+Relationships:
+One to One:
+One to Many:
+Post => Comments (one post can have many comments)
+User => Posts (one user can have many posts)
+Group => Posts (one group can have many posts)
+Many to Many:
+Users ⇔ Groups
+Following ⇔ Followers (users can follow each other)
+Group_post ⇔ Groups
+
+
+SQL
+
+CREATE TABLE users (
+user_id SERIAL PRIMARY KEY,
+user_password VARCHAR(500),
+user_email VARCHAR(255),
+first_name VARCHAR(50),
+last_name VARCHAR(50),
+user_bio VARCHAR(255)
+);
+
+CREATE TABLE groups(
+group_id SERIAL PRIMARY KEY,
+group_name VARCHAR(50)
+);
+
+CREATE TABLE posts(
+post_id SERIAL PRIMARY KEY,
+post_content VARCHAR(1000),
+post_image VARCHAR(2000),
+author_id INT NOT NULL REFERENCES users(user_id)
+);
+
+CREATE TABLE comments(
+comment_id SERIAL PRIMARY KEY,
+comment_text VARCHAR(1000),
+comment_author_id INT NOT NULL REFERENCES users(user_id),
+post_id INT NOT NULL REFERENCES posts(post_id)
+);
+
+CREATE TABLE follow(
+follow_id SERIAL PRIMARY KEY,
+follower_id INT NOT NULL REFERENCES users(user_id),
+following_id INT NOT NULL REFERENCES users(user_id)
+);
+
+CREATE TABLE group_posts(
+group_post_id SERIAL PRIMARY KEY,
+group_id INT NOT NULL REFERENCES groups(group_id),
+post_id INT NOT NULL REFERENCES posts(post_id)
+);
+
+CREATE TABLE group_users(
+group_user_id SERIAL PRIMARY KEY,
+group_id INT NOT NULL REFERENCES groups(group_id),
+user_id INT NOT NULL REFERENCES users(user_id)
+);
