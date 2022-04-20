@@ -25,8 +25,21 @@ nbYear(1500000, 2.5, 10000, 2000000) --> 10
 Note: Don’t forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.
 */
 
-const nbYear = () =>{
-
+const nbYear=(p0, percent, aug, p)=>{
+    let solution = 0
+    percent = percent / 100
+    if(p0 < p){
+        while (p0 < p){
+            p0 = p0 + (p0 * percent) + aug
+            solution++
+       }
+    } else{
+        while (p0 > p){
+            p0 = p0 + (-(p0 * percent)) + aug
+            solution++
+        }
+    }
+    return solution
 }
 
 console.log(nbYear(1500, 5, 100, 5000)) // 15
