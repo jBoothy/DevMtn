@@ -63,7 +63,7 @@ module.exports = {
         FROM cc_appointments a
         JOIN cc_emp_appts ea ON a.appt_id = ea.appt_id
         JOIN cc_employees e ON e.emp_id = ea.emp_id
-        JOIN cc_users u on e.user_id = u.user_id
+        JOIN cc_users u ON e.user_id = u.user_id
         WHERE a.approved = true AND a.completed = true
         ORDER BY a.date desc;
         `).then(dbRes=>res.status(200).send(dbRes[0])).catch(err=>console.log(err))
