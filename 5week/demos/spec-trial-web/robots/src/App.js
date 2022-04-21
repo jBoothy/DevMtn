@@ -9,8 +9,8 @@ const App = () => {
   const [input, setInput] = useState('')
   const [robots, setRobots] = useState([])
 
-  const handleInput = () => {
-    console.log('handleInput fn fired')
+  const handleInput = (evt) => {
+    setInput(evt.target.value)
   }
 
   const handleRobotAdd = (e) => {
@@ -29,8 +29,8 @@ const App = () => {
     <div className='app'>
       <Header/>
       <main>
-        <Form />
-        <RobotList />
+        <Form handleInput={handleInput} handleRobotAdd={handleRobotAdd} input={input}/>
+        <RobotList robots={robots}/>
       </main>
     </div>
   )

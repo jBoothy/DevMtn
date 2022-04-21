@@ -1,12 +1,14 @@
 import React from 'react'
 
-const Form = () => {
+const Form = (props) => {
     return (
-        <form>
+        <form onSubmit={props.handleRobotAdd}>
             <p>What is your new robot's name?</p>
             <input 
                 type='text' 
-                placeholder='name'/>
+                placeholder='name'
+                onChange={props.handleInput}
+                value={props.input}/>
             <button>Create Robot</button>
         </form>
     )
