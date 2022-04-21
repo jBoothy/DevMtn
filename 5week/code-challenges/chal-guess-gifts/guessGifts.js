@@ -44,7 +44,7 @@ Example:*/
 // guessGifts(wishlist, presents); // must return ["Toy Car", "Mini Puzzle"]
 
 
-const guessGifts = (presents,wishlist) =>{
+const guessGifts = (wishlist,presents) =>{
     let ans =[]
     presents.map((p)=>{wishlist.map(w=>{p.size===w.size&&p.clatters===w.clatters&&p.weight===w.weight?ans.push(w.name):null})})
     return ans
@@ -64,4 +64,4 @@ var presents = [
     {size: "small", clatters: "no", weight: "light"}
 ];
 
-console.log(guessGifts(presents, wishlist))
+console.log(guessGifts(wishlist, presents))
