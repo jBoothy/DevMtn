@@ -225,10 +225,15 @@ module.exports = {
             ('Yemen'),
             ('Zambia'),
             ('Zimbabwe');
+
+            INSERT INTO cities (name, rating, country_id)
+                VALUES('Springville', 5, 5151)
+                ('Salem', 4, 8675309)
+                ('Lake Havasu', 5, 78);
         `).then(() => {
             console.log('DB seeded!')
             res.sendStatus(200)
-        }).catch(err => console.log('error seeding DB', err))
+        }).catch(err => console.log('error seeding DB', err)) // Not completely sure if extra credit was done correctly but added 3 hard coded cities in
     },
     getCountries: (req,res)=>{
         sequelize.query(`SELECT * FROM countries;`).then(dbRes => res.status(200).send(dbRes[0])).catch(err=>console.log(err))
