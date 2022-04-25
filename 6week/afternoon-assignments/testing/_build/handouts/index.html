@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Testing Lab | Devmountain Foundations</title>
+
+      <link
+        href="_static/pygments.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link href="_static/devmountain.css" rel="stylesheet" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="_static/devmountain.css" />
+          <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+          <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+
+      <script src="_static/pdfobject.min.js"></script>
+      
+  </head>
+  <body>
+      <div id="handouts-container">
+        <header id="page-header">
+            <p id="project-title">Devmountain Foundations</p>
+            <p id="page-title">Testing Lab</p>
+              <p id="backlink">
+                <a href="/"> &laquo; Back to Homepage </a>
+              </p>
+        </header>
+
+        <nav id="page-toc"><ul>
+<li><a class="reference internal" href="#">Testing Lab</a><ul>
+<li><a class="reference internal" href="#part-1">Part 1</a></li>
+<li><a class="reference internal" href="#part-2">Part 2</a><ul>
+<li><a class="reference internal" href="#step-1">Step 1</a></li>
+<li><a class="reference internal" href="#step-2">Step 2</a></li>
+<li><a class="reference internal" href="#step-3">Step 3</a></li>
+<li><a class="reference internal" href="#step-4">Step 4</a></li>
+<li><a class="reference internal" href="#challenge">Challenge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+
+        <main id="page-content">
+            <section class="section" id="testing-lab">
+<h1>Testing Lab</h1>
+<section class="section" id="part-1">
+<h2>Part 1</h2>
+<p>Clone and run the Wanted Queries application by using the following commands in your terminal</p>
+<ul>
+<li><p>Navigate to the folder you want to store this inside in command line and run the following commands:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">-b</span> <span class="pre">version-1.1</span> <span class="pre">https://github.com/DevMountain-QA/wanted-queries.git</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">wanted-queries</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">i</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">start</span></code></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The Wanted Queries app should be up and running in your browser</p></li>
+<li><p>Review the requirements located here: <a class="reference external" href="https://github.com/DevMountain-QA/wanted-queries/blob/version-1.1/README.md" target="_blank">https://github.com/DevMountain-QA/wanted-queries/blob/version-1.1/README.md</a></p></li>
+<li><p>Create a test plan to organize your testing, and create a total of 5 tests:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>2 high level (broad) tests</p></li>
+<li><p>2 low level (specific) tests</p></li>
+<li><p>1 smoke/sanity test (basic run through of the whole site)</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>There is no “Bug Bounty”, however you should have enough coverage in your tests to find some flaws with the application</strong></p>
+</section>
+<section class="section" id="part-2">
+<h2>Part 2</h2>
+<p>For part 2 you will need to create a directory and open it up in VS Code. Call the directory <code class="docutils literal notranslate"><span class="pre">testing-lab</span></code>.</p>
+<section class="section" id="step-1">
+<h3>Step 1</h3>
+<p>In this step, we’ll initialize a <code class="docutils literal notranslate"><span class="pre">package.json</span></code> and import Jest into our project.</p>
+<p><strong>Instructions:</strong></p>
+<ul class="simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">init</span> <span class="pre">-y</span></code>.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">--save-dev</span> <span class="pre">jest</span></code> to install Jest and save it to the development dependencies.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">package.json</span></code> and modify the <code class="docutils literal notranslate"><span class="pre">test</span></code> script, replacing the entire string with <code class="docutils literal notranslate"><span class="pre">`jest`</span></code></p></li>
+</ul>
+</section>
+<section class="section" id="step-2">
+<h3>Step 2</h3>
+<p>In this step, create a JavaScript file that has a couple functions.</p>
+<p><strong>Instructions:</strong></p>
+<ul class="simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">functions.js</span></code> file.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">module.exports</span></code> to export an object.</p></li>
+<li><p>Add a new property to the object called <code class="docutils literal notranslate"><span class="pre">returnTwo</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">returnTwo</span></code> should be a function that returns the integer <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Add a new property to the object called <code class="docutils literal notranslate"><span class="pre">greeting</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">greeting</span></code> should be a function with a <code class="docutils literal notranslate"><span class="pre">name</span></code> parameter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">greeting</span></code> should return <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">name.&quot;</span></code> where <code class="docutils literal notranslate"><span class="pre">name</span></code> is the value of the <code class="docutils literal notranslate"><span class="pre">name</span></code> parameter.</p></li>
+</ul>
+</li>
+<li><p>Add a new property to the object called <code class="docutils literal notranslate"><span class="pre">add</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">add</span></code> should be a function with a <code class="docutils literal notranslate"><span class="pre">num1</span></code> and <code class="docutils literal notranslate"><span class="pre">num2</span></code> parameter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add</span></code> should return the sum of <code class="docutils literal notranslate"><span class="pre">num1</span></code> and <code class="docutils literal notranslate"><span class="pre">num2</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section class="section" id="step-3">
+<h3>Step 3</h3>
+<p>In this step, we’ll create a test file to test the functions inside of <code class="docutils literal notranslate"><span class="pre">functions.js</span></code>.</p>
+<p><strong>Instructions:</strong></p>
+<ul class="simple">
+<li><p>Create a new test file called <code class="docutils literal notranslate"><span class="pre">functions.test.js</span></code>.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">functions.test.js</span></code>.</p></li>
+<li><p>Require <code class="docutils literal notranslate"><span class="pre">functions.js</span></code> at the top.</p></li>
+<li><p>Create a test for <code class="docutils literal notranslate"><span class="pre">returnTwo</span></code>:</p>
+<ul>
+<li><p>This test should <code class="docutils literal notranslate"><span class="pre">expect</span></code> <code class="docutils literal notranslate"><span class="pre">returnTwo()</span></code> to equal <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Create a test for <code class="docutils literal notranslate"><span class="pre">greeting</span></code>:</p>
+<ul>
+<li><p>This test should <code class="docutils literal notranslate"><span class="pre">expect</span></code> <code class="docutils literal notranslate"><span class="pre">greeting('James')</span></code> to equal <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">James.&quot;</span></code>.</p></li>
+<li><p>This test should <code class="docutils literal notranslate"><span class="pre">expect</span></code> <code class="docutils literal notranslate"><span class="pre">greeting('Jill')</span></code> to equal <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">Jill.&quot;</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Create a test for <code class="docutils literal notranslate"><span class="pre">add</span></code>:</p>
+<ul>
+<li><p>This test should <code class="docutils literal notranslate"><span class="pre">expect</span></code> <code class="docutils literal notranslate"><span class="pre">add(1,</span> <span class="pre">2)</span></code> to equal <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p></li>
+<li><p>This test should <code class="docutils literal notranslate"><span class="pre">expect</span></code> <code class="docutils literal notranslate"><span class="pre">add(5,</span> <span class="pre">9)</span></code> to equal <code class="docutils literal notranslate"><span class="pre">14</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section class="section" id="step-4">
+<h3>Step 4</h3>
+<p>In this step, we’ll run our <cite>test</cite> script and watch Jest in action.</p>
+<p><strong>Instruction:</strong></p>
+<ul class="simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">test</span></code>.</p></li>
+</ul>
+<p>If everything worked correctly, you should have a total of 3 passed tests.</p>
+</section>
+<section class="section" id="challenge">
+<h3>Challenge</h3>
+<p>If you have finished the lab and still have some time remaining, take on this challenge.</p>
+<p><strong>Instructions:</strong></p>
+<ul class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">functions.js</span></code>.</p></li>
+<li><p>Add a new function for <code class="docutils literal notranslate"><span class="pre">multiply</span></code>, <code class="docutils literal notranslate"><span class="pre">divide</span></code>, and <code class="docutils literal notranslate"><span class="pre">subtract</span></code>:</p>
+<ul>
+<li><p>All these functions should follow the same structure as the <code class="docutils literal notranslate"><span class="pre">add</span></code> function.</p></li>
+</ul>
+</li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">functions.test.js</span></code>.</p></li>
+<li><p>Add a new test case for <code class="docutils literal notranslate"><span class="pre">multiply</span></code>, <code class="docutils literal notranslate"><span class="pre">divide</span></code>, and <code class="docutils literal notranslate"><span class="pre">subtract</span></code>:</p>
+<ul>
+<li><p>All these tests should follow the same structure as the <code class="docutils literal notranslate"><span class="pre">add</span></code> test case.</p></li>
+<li><p>Use whatever numbers you like, but include two <a href="#id1"><span class="problematic" id="id2">``</span></a>expect``s.</p></li>
+</ul>
+</li>
+<li><p>Group the <code class="docutils literal notranslate"><span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">multiply</span></code>, <code class="docutils literal notranslate"><span class="pre">divide</span></code>, and <code class="docutils literal notranslate"><span class="pre">subtract</span></code> test cases using <code class="docutils literal notranslate"><span class="pre">describe</span></code>.</p>
+<ul>
+<li><p>You will want to go look up the jest documentation to learn the correct syntax for a <code class="docutils literal notranslate"><span class="pre">describe</span></code> block.</p></li>
+<li><p>Call this group <cite>Math functions</cite>.</p></li>
+</ul>
+</li>
+<li><p>Run <cite>npm run test</cite>.</p></li>
+<li><p>Once you’ve run your new tests, go back through all of your tests and see if there are other things you can check for</p>
+<ul>
+<li><p>check data types</p></li>
+<li><p>read through jest documentation for other ideas</p></li>
+<li><p>think about edge cases and add to your tests <strong>and</strong> functions in order for these edge cases not to break things. some ideas:</p>
+<ul>
+<li><p>what will happen if more arguments are sent in than there are parameters?</p></li>
+<li><p>what will happen to a math function if a string is sent in</p></li>
+<li><p>what if a falsey value is sent into the function?</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+        </main>
+
+        <footer id="page-footer">
+            <p>&copy; 2021 Devmountain</p>
+        </footer>
+      </div>
+
+      <script src="_static/main.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+  </body>
+</html>
