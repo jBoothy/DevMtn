@@ -15,6 +15,19 @@ const search = async (driver, searchTerm) => {
 
     // We make our restults lower case and then expect it to contain our original search term
     expect(resultsText.toLowerCase()).toContain(searchTerm.toLowerCase())
+    // expecting google search results to contain "tenet"
+
+    // Clears search bar
+    await driver.findElement(By.name('q')).clear()
+
+    // Adding new search using hard code
+    await driver.findElement(By.name('q')).sendKeys(`norse odin\n`)
+
+    // Clicking the images tab
+    await driver.findElement(By.xpath(`(//a[text()="Images"])[1]`)).click()
+
+    // Keeping page open for a couple seconds
+    await driver.sleep(2000)
 }
 
 module.exports = {
