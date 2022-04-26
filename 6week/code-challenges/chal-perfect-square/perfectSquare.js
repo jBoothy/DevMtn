@@ -16,8 +16,12 @@ perfectSquare(289) // should return 324 (17x17=289 18x18=324)
 perfectSquare(3000) // should return -1 (sq root of 3000 is 54.77)
 */
 
-const perfectSquare=(num)=>{
-
+const perfectSquare=(n)=>{
+    if(Number.isInteger(Math.sqrt(n))){
+        return (Math.sqrt(n)+1)*(Math.sqrt(n)+1)
+    } else{
+        return -1
+    }
 }
 
 console.log(perfectSquare(9))
