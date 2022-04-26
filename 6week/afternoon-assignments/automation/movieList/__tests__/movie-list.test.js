@@ -31,6 +31,11 @@ const editList = async (driver)=>{
     await remove.click()
 
     await driver.sleep(2000)
+    let ul = await driver.findElement(By.xpath(`//ul`))
+
+    // Checking if deleted
+    expect(ul.hasChildren).toBeFalsy()
+    await driver.sleep(2000)
 }
 
 test(`Edit movies`, async ()=>{
