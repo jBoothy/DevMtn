@@ -1,5 +1,6 @@
 // Lines 2 through 6 are our boilerplate lines of code, we need them for our tests to work
 const {Builder, Capabilities} = require('selenium-webdriver')
+const {By} = require('selenium-webdriver')
 
 require('chromedriver')
 
@@ -36,6 +37,9 @@ test('I can search Google', async () => {
 
     // Let's do another search!
     await driver.findElement(By.name('q')).sendKeys('real hammer of thor\n')
+
+    // Adding my own extra credit to practice
+    await driver.findElement(By.xpath('(//a[text()="Images"])[1]')).click()
 
     await driver.sleep(2000) 
 })
