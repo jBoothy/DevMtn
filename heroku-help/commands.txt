@@ -1,0 +1,13 @@
+Creating Heroku Site
+
+git init (create repo)
+git add . (add files to repo)
+git commit -m "comment"
+heroku create -a app-name-here (create heroku app)
+git remove -v (check to see if heroku has been set)
+git push heroku main (start site)
+
+Other Commands
+
+git remote rename oldName newName (renaming app)
+heroku git:remote -a app-name (Add an existing remote to local repo)
