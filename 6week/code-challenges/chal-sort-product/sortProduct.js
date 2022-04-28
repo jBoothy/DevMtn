@@ -27,7 +27,6 @@ Output: 2, 3, 4, 23, 5
 */
 
 const value=(input)=>{
-    let index = 1
     let solution = {}
     for(let i=0;i<input.length;i++){
         let product = (i+1) * input[i]
