@@ -27,7 +27,14 @@ Output: 2, 3, 4, 23, 5
 */
 
 const value=(input)=>{
-
+    let index = 1
+    let solution = {}
+    for(let i=0;i<input.length;i++){
+        let product = (i+1) * input[i]
+        solution[product] = input[i]  
+    }
+    return (Object.values(solution))
 }
 
-console.log(value([23, 2, 3, 4, 5]))
+
+console.log(value([23, 2, 3, 4, 5])) // 2, 3, 4, 23, 5
