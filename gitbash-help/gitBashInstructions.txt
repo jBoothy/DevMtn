@@ -27,9 +27,16 @@ Pushing changes for updates ---- git push
 Getting "fatal: The current branch has no upstream branch." ---- git config --global push.default current
 Getting "The tip of your current branch is behind its remote counterpart" (forces the push) ---- git push -f master
 
-
-
 Pulling from GitHub
 _______________________________
 Cloning file (repository) from GitHub ---- git clone (github url)
 Pull changes from a GitHub repository that you are already tapped into ---- git pull
+
+Pushing to GitHub from pulled repo
+_______________________________
+
+Adding remote for first time push ---- git remote add NAMEOFFILE (github url)
+Pushing ---- git push NAMEOFFILE
+
+Need to do merge request in GitHub for changes to happen
+
